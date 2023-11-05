@@ -5,7 +5,7 @@ namespace DSCC_MVC_00012071.Services
 {
     public class RestClientService
     {
-        private readonly string _baseUrl = "https://localhost:44386/api/";
+        private readonly string _baseUrl = "http://ec2-3-120-246-36.eu-central-1.compute.amazonaws.com/api/";
 
         private readonly RestClient _restClient;
 
