@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewData[ "Title" ] = "Employees Table";
+}
+
+<h1>Employees Table</h1>
+
+<p>
+    @Html.ActionLink("Register Employee", "Register")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Job Title
+            </th>
+            <th>
+                Bio
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Employee in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Employee.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Employee.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Employee.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Employee.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Employee.Bio)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=Employee.Id  }) |
+                    @Html.ActionLink("Details", "Details", new {  id=Employee.Id  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=Employee.Id  })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

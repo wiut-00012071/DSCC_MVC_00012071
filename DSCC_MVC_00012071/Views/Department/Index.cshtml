@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Department>
+
+@{
+    ViewData[ "Title" ] = "Departments Table";
+}
+
+<h1>Departments Table</h1>
+
+<p>
+    <a asp-action="Create">Create Department</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Department department in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => department.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => department.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=department.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id=department.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=department.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

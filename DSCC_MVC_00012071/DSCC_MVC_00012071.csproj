@@ -13,4 +13,24 @@
     <None Remove="DeploymentScripts\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\Department\Create.cshtml" />
+    <None Include="Views\Department\Details.cshtml" />
+    <None Include="Views\Department\Edit.cshtml" />
+    <None Include="Views\Department\Index.cshtml" />
+    <None Include="Views\Employee\Details.cshtml" />
+    <None Include="Views\Employee\Edit.cshtml" />
+    <None Include="Views\Employee\Index.cshtml" />
+    <None Include="Views\Employee\Register.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
 </Project>
