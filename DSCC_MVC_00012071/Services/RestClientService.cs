@@ -5,13 +5,13 @@ namespace DSCC_MVC_00012071.Services
 {
     public class RestClientService
     {
-        private readonly string _baseUrl = "http://ec2-3-120-246-36.eu-central-1.compute.amazonaws.com/api/";
-
         private readonly RestClient _restClient;
 
-        public RestClientService()
+        public RestClientService( IConfiguration configuration )
         {
-            _restClient = new RestClient(_baseUrl);
+            string apiBaseUrl = configuration[ "ApiBaseUrl" ];
+
+            _restClient = new RestClient(apiBaseUrl);
         }
 
         public T Get<T>( string url )
